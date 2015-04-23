@@ -30,4 +30,5 @@ RUN rm -rf sipp
 
 RUN git clone git://git.xivo.fr/official/xivo-load-tester.git
 
-CMD ["/bin/bash", "-l"]
+#Finally, run a scenario 
+CMD ["/bin/bash", "-l", "/xivo-load-tester/launch-by-greg.sh"]
