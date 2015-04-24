@@ -21,4 +21,4 @@ EOF
 
 echo "xivo-load-tester docker config init done."
 echo "Now you have to update the configuration in the $DOCKER_CONFIG_DIR/$DOCKER_APP/conf."
-echo "Than you can start xivo-load-tester by running 'docker run $(cat \$DOCKER_CONFIG_DIR/\$DOCKER_APP/docker-run.conf)'"
+echo "Than you can start xivo-load-tester by running 'docker run \$(cat $DOCKER_CONFIG_DIR/$DOCKER_APP/docker-run.conf)'"
