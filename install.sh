@@ -1,15 +1,21 @@
 #!/bin/sh
+
+#
+# TODO: dans le cat du docker-run.conf: quelles commandes vais-je passer? Car la commande sera différente suivant le scénario voulu...
+#
+
 DOCKER_APP="xivo-load-tester"
 DOCKER_CONFIG_DIR="/etc/docker"
 DOCKER_APP_LOG_DIR="/var/log/$DOCKER_APP"
 
-mkdir -p $DOCKER_CONFIG_DIR/$DOCKER_APP/conf
+mkdir -p $DOCKER_CONFIG_DIR/$DOCKER_APP/conf/etc
 cd $DOCKER_CONFIG_DIR/$DOCKER_APP 
 
 mkdir $DOCKER_APP_LOG_DIR 
 chown daemon:daemon $DOCKER_APP_LOG_DIR 
 
 cat > docker-run.conf << EOF
+--net=host
 -t
 -d
 --restart=always
